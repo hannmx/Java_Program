@@ -111,7 +111,29 @@ public class j_qwe {
                 System.out.println(q + " + " + w + " = " + e);
                 System.out.println(sum + " = " + e);
             }
+            if (q % 10 != 0 & w % 10 != 0) {    //если у двух чисел изменяется разряд десятков
+                while (q + w != e) {
+                    if (w + q > e) {
+                        System.out.println("Решений уравнения нет!");
+                        break;   
+                    }
+                    if (w < q) {
+                        w += 10;
+                        q += 10;
+                    }
+                    else {
+                        w += 10;
+                        q += 20;
+                    }
+                }
+                sum = q + w;
+                System.out.println("Чтобы выражение принимало значение истино: ");  //вывод результата на консоль
+                System.out.println("q = " + q + "\nw = " + w);
+                System.out.println(q + " + " + w + " = " + e);
+                System.out.println(sum + " = " + e);
+                }
+            }
         }
         
     }
-}
+
