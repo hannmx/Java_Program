@@ -47,7 +47,7 @@ public class j_qwe {
             System.out.println("Решений уравнения нет!");
         }
         else {
-            if (q % 10 == 0 & w % 10 == 0) {
+            if (q % 10 == 0 & w % 10 == 0) {    //если у двух чисел изменяется разряд единиц
                 if (sum + 18 < e) {
                     System.out.println("Решений уравнения нет!");
                 }
@@ -70,6 +70,46 @@ public class j_qwe {
                     System.out.println(q + " + " + w + " = " + e);
                     System.out.println(sum + " = " + e);
                 }
+            }
+            if (q % 10 == 0 & w % 10 != 0) {    //первое число изменяется в разряде единиц, второе в разряде десятков
+                boolean a = true;
+                while (a) {
+                    if (w < e - q) {
+                        w += 10;
+                    }
+                    else {
+                        w -= 10;
+                        a = false;
+                    }
+                }
+                while (q + w != e) {
+                    q += 1;
+                }
+                sum = q + w;
+                System.out.println("Чтобы выражение принимало значение истино: ");  //вывод результата на консоль
+                System.out.println("q = " + q + "\nw = " + w);
+                System.out.println(q + " + " + w + " = " + e);
+                System.out.println(sum + " = " + e);
+            }
+            if (q % 10 != 0 & w % 10 == 0) {    //второе число изменяется в разряде единиц, первое в разряде десятков
+                boolean a = true;
+                while (a) {
+                    if (q < e - w) {
+                        q += 10;
+                    }
+                    else {
+                        q -= 10;
+                        a = false;
+                    }
+                }
+                while (q + w != e) {
+                    w += 1;
+                }
+                sum = q + w;
+                System.out.println("Чтобы выражение принимало значение истино: ");  //вывод результата на консоль
+                System.out.println("q = " + q + "\nw = " + w);
+                System.out.println(q + " + " + w + " = " + e);
+                System.out.println(sum + " = " + e);
             }
         }
         
