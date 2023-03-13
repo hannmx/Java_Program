@@ -1,5 +1,3 @@
-//Код для задачи с запросом БД select * from where {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
-
 package java_API;
 
 import java.io.*;
