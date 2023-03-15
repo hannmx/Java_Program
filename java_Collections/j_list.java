@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class j_list {
     public static void main(String[] args) {
         Random rand = new Random();
