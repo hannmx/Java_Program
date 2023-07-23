@@ -15,9 +15,27 @@ public class j_HashMap<K, V> implements Iterable{
 
     private Bucket[] buckets;
 
+    
     @Override
-    public Iterator iterator() {
+    public Iterator<Entry<K, V>> iterator() {
         return new HashMapIterator();
+    }
+
+    private class HashMapIterator implements Iterator<Entry<K, V>> {
+        private int currentIndex = 0;
+        private Entry<K, V>[] entries = /* ваши элементы таблицы, реализация зависит от вашей текущей реализации */;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < entries.length;
+        }
+
+        @Override
+        public Entry<K, V> next() {
+            Entry<K, V> entry = entries[currentIndex];
+            currentIndex++;
+            return entry;
+        }
     }
 
     class HashMapIterator implements Iterator{
@@ -30,6 +48,28 @@ public class j_HashMap<K, V> implements Iterable{
         @Override
         public Object next() {
             return null;
+        }
+    }
+
+    private static class Entry<K, V> {
+        private final K key;
+        private V value;
+
+        public Entry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public void setValue(V value) {
+            this.value = value;
         }
     }
 

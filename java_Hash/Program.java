@@ -2,6 +2,7 @@ package java_Hash;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Program {
 
@@ -30,6 +31,13 @@ public class Program {
         for (Object e: hashMap) {
 
         }
+
+        // Перебор всех элементов с помощью цикла foreach
+    for (HashMap.Entry<String, Integer> entry : hashMap) {
+        String key = entry.getKey();
+        Integer value = entry.getValue();
+        System.out.println("Key: " + key + ", Value: " + value);
+    }
 
     }
 
