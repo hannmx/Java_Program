@@ -13,7 +13,6 @@ public class Program {
 
         j_HashMap<String, String> hashMap = new j_HashMap<>(4);
 
-
         String v = hashMap.put("+79005551122", "Александр");
         v = hashMap.put("+79005551123", "Сергей");
         v = hashMap.put("+79005551123", "Алексей");
@@ -23,23 +22,17 @@ public class Program {
         v = hashMap.put("+79005551127", "Александр4");
         v = hashMap.put("+79005551128", "Александр5");
 
-
-        String searchRes = hashMap.get("+790055511221");
+        String searchRes = hashMap.get("+79005551122"); // Исправлено ключ на "+79005551122"
+        System.out.println("Search result: " + searchRes); // Добавлен вывод результата поиска
 
         v = hashMap.remove("+79005551127");
 
-        for (Object e: hashMap) {
-
-        }
-
         // Перебор всех элементов с помощью цикла foreach
-    for (HashMap.Entry<String, Integer> entry : hashMap) {
-        String key = entry.getKey();
-        Integer value = entry.getValue();
-        System.out.println("Key: " + key + ", Value: " + value);
+        for (j_HashMap.Entry<String, String> entry : hashMap) { // Исправлен тип в цикле перебора
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println("Key: " + key + ", Value: " + value);
+        }
     }
-
-    }
-
 }
 

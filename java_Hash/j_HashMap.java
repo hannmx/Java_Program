@@ -13,7 +13,7 @@ public class j_HashMap<K, V> implements Iterable{
         return size;
     }
 
-    private Bucket[] buckets;
+    private Bucket<K, V>[] buckets;
 
     
     @Override
@@ -23,11 +23,12 @@ public class j_HashMap<K, V> implements Iterable{
 
     private class HashMapIterator implements Iterator<Entry<K, V>> {
         private int currentIndex = 0;
-        private Entry<K, V>[] entries = /* ваши элементы таблицы, реализация зависит от вашей текущей реализации */;
+        private Entry<K, V>[] entries = new Entry[size]; // Создаем массив соответствующего размера
 
+        // Переопределите методы hasNext() и next() для итератора
         @Override
         public boolean hasNext() {
-            return currentIndex < entries.length;
+            return currentIndex < size;
         }
 
         @Override
@@ -148,8 +149,7 @@ public class j_HashMap<K, V> implements Iterable{
 
     }
 
-    private int calculateBucketIndex(K key)
-    {
+    private int calculateBucketIndex(K key) {
         return Math.abs(key.hashCode()) % buckets.length;
     }
 
